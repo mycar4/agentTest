@@ -6,5 +6,5 @@ langchain-chroma
 pypdf
 python-dotenv
 streamlit
-protobuf
+protobuf<5.0.0
 google-genai
