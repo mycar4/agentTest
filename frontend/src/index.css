@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f9f9f9;
+    color: #1a1c1c;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .glass-badge {
+    @apply bg-white/80 backdrop-blur-xl;
+  }
+  
+  .hero-gradient {
+    @apply bg-gradient-to-b from-transparent to-black/80;
+  }
+  
+  .timeline-thread {
+    @apply relative;
+  }
+  
+  .timeline-thread::before {
+    @apply content-[''] absolute left-[11px] top-6 bottom-0 w-0.5 border-l-2 border-dashed border-[#0077b6];
+  }
+
+  .scroll-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scroll-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
