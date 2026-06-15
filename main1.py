@@ -4,18 +4,6 @@ from utils import llm_call
 # 1. 페이지 레이아웃 및 제목 설정
 st.set_page_config(page_title="AI 여행 플래너 에이전트", page_icon="✈️", layout="wide")
 
-# --- 우측 상단 GitHub 배너, Fork 메뉴 및 하단 푸터를 숨기는 CSS ---
-hide_streamlit_style = """
-    <style>
-    /* 상단 헤더 전체 숨기기 (GitHub 아이콘, Fork 버튼 제거) */
-    header {visibility: hidden;}
-    /* 하단 푸터 숨기기 (Made with Streamlit 제거) */
-    footer {visibility: hidden;}
-    /* 상단 여백 타이트하게 조절 */
-    .block-container {padding-top: 2rem;}
-    </style>
-"""
-st.markdown(hide_streamlit_style, unsafe_allowed_html=True)
 
 
 st.title("✈️ 프롬프트 체이닝 여행 플래너 에이전트")

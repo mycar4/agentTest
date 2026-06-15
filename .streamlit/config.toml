@@ -1,0 +1,5 @@
+[client]
+# 우측 상단 메뉴바 및 깃허브 배너 관련 기능 비활성화
+
+showErrorDetails = false
+toolbarMode = "minimal"
