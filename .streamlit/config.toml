@@ -1,5 +1,7 @@
 [client]
-# 우측 상단 메뉴바 및 깃허브 배너 관련 기능 비활성화
-
 showErrorDetails = false
 toolbarMode = "minimal"
+
+[ui]
+# 우측 하단 푸터(Made with Streamlit)를 아예 비활성화하는 공식 옵션
+hideTopBar = true

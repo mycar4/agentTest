@@ -76,3 +76,7 @@ if st.button("🚀 여행 계획 시작하기", type="primary"):
                         st.stop()
                         
         st.success("🎉 모든 단계의 여행 계획 수립이 성공적으로 완료되었습니다!")
+
+
+# 파일 맨 밑에 추가
+st.html("<style>div[data-testid='stStatusWidget'] {visibility: hidden;} footer {display: none !important;}</style>")
