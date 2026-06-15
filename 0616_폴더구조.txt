@@ -1,0 +1,78 @@
+my-travel-app/
+├── backend/               # 🐍 파이썬 백엔드 (FastAPI + LangGraph)
+│   ├── main.py            # API 서버 엔트리포인트
+│   ├── database.py        # SQLite DB 설정 및 테이블 스키마
+│   ├── graph.py           # 기존의 LangGraph 워크플로우 로직
+│   └── utils.py           # llm_call 함수
+└── frontend/              # ⚛️ 프론트엔드 (React + Tailwind CSS)
+    ├── package.json
+    ├── src/
+    │   ├── App.jsx        # 메인 메이트 인터페이스 및 라우팅
+    │   └── main.jsx
+
+
+
+
+frontend/
+├── tailwind.config.js     # ⚙️ HTML에 있던 복잡한 색상/폰트 설정을 여기에 옮깁니다.
+├── src/
+│   ├── index.css          # 🎨 HTML <style> 태그에 있던 폰트 임포트와 전역 CSS를 넣습니다.
+│   ├── App.jsx            # 🧠 메인 컨트롤러 (상태를 관리하고 화면을 전환해줌)
+│   │
+│   └── components/        # 🧱 4개의 화면을 각각의 부품(Component)으로 분리!
+│       ├── SearchHome.jsx      # (1_1screen) 검색창 및 여행지 추천 리스트 화면
+│       ├── LocationDetail.jsx  # (1_2 & 1_4screen) 아말피 해안 상세, 선정 이유, 모험 타임라인
+│       └── DailyItinerary.jsx  # (1_3screen) 시간대별 완벽한 하루 일정 화면
+
+
+frontend/
+├── tailwind.config.js        # 1단계: 디자인 토큰 (완료)
+├── src/
+│   ├── index.css             # 1단계: 글로벌 폰트 및 CSS (완료)
+│   ├── App.jsx               # 메인 라우터 및 상태 중앙 관리소 (DB 연결 관리)
+│   │
+│   ├── components/           # 2단계: 공통 부품들 (디자인 퀄리티 담당)
+│   │   ├── Navigation/
+│   │   │   ├── TopAppBar.jsx
+│   │   │   └── BottomNavBar.jsx
+│   │   └── UI/
+│   │       ├── GlassBadge.jsx
+│   │       ├── TimelineThread.jsx
+│   │       └── SearchInput.jsx
+│   │
+│   └── pages/                # 3단계: 완성된 4개의 화면들
+│       ├── 1_HomeView.jsx
+│       ├── 2_DetailView.jsx
+│       └── 3_ItineraryView.jsx
+
+
+frontend/
+├── src/
+│   ├── types.ts                  # 1. 공통 타입 정의 (추가)
+│   ├── App.tsx                   # 2. 메인 컨트롤러 (상태 관리 및 라우팅)
+│   ├── components/
+│   │   └── BottomNav.tsx         # 3. 하단 네비게이션 컴포넌트
+│   └── pages/
+│       ├── HomeView.tsx          # 4. 홈 화면 뷰
+│       ├── ExploreView.tsx       # (이후 분리해 볼 탐색 화면)
+│       ├── ItineraryView.tsx     # (이후 분리해 볼 일정 화면)
+│       ├── WeatherView.tsx       # (이후 분리해 볼 날씨 화면)
+│       └── SettingsView.tsx      # (이후 분리해 볼 설정 화면)
+
+
+
+/my-ai-agent-project
+├── /frontend              # React(Vite) 기반 프론트엔드
+│   ├── /src
+│   │   ├── /components    # 공통 UI 컴포넌트
+│   │   ├── /pages         # 페이지 뷰 (Home, Itinerary 등)
+│   │   ├── App.tsx        # 메인 라우팅 및 상태 관리
+│   └── package.json
+├── /backend               # FastAPI 기반 백엔드 에이전트
+│   ├── /venv              # 가상환경
+│   ├── main.py            # API 엔드포인트 및 에이전트 실행
+│   ├── graph.py           # LangChain 에이전트 로직 (AgentExecutor)
+│   ├── utils.py           # LLM Call 및 외부 도구 연결
+│   ├── database.py        # 데이터베이스 모델 및 세션 관리
+│   └── .env               # API Key 관리 (OPENAI_API_KEY, GEMINI_API_KEY)
+└── README.md
