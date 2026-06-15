@@ -17,6 +17,7 @@ if not OPENAI_API_KEY:
 client = AsyncOpenAI(
     api_key=OPENAI_API_KEY,
 )
+
 sync_client = OpenAI(
     api_key=OPENAI_API_KEY,
 )
