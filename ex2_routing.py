@@ -16,6 +16,7 @@ def run_router_workflow(user_prompt : str):
     print("선택한 모델", selected_model)
     response = llm_call(user_prompt, model = selected_model)
     print(response)
+    print()
     return response
 
 query1 = "1더하기 2는 뭐지?"
