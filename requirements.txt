@@ -1,11 +1,7 @@
-langchain
-langchain-community
-langchain-text-splitters
-langchain-openai
-langchain-chroma
-langgraph
-pypdf
+openai
 python-dotenv
-protobuf<5.0.0
 streamlit
-google-genai
+langchain-openai
+langchain-google-genai
+langgraph
+typing_extensions

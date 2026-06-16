@@ -2,15 +2,10 @@ import asyncio
 
 from utils import llm_call_async
 
+# asyncio.gather를 사용하면 여러 코루틴을 동시에 실행하고 순서가 보장된 결과를 얻을 수 있습니다.
 async def run_llm_parallel(prompt_details):
     tasks = [llm_call_async(prompt['user_prompt'], prompt['model']) for prompt in prompt_details]
-    responses = []
-    
-    for task in asyncio.as_completed(tasks):
-        result = await task
-        print("LLM 응답 완료:", result)
-        responses.append(result)
-    
+    responses = await asyncio.gather(*tasks)
     return responses
 
 async def main():
@@ -41,4 +36,3 @@ async def main():
 
 # 비동기 main 함수 실행
 asyncio.run(main())
-
